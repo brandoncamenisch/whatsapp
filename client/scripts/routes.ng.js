@@ -1,7 +1,7 @@
 angular
   .module('Whatsapp')
   .config(config);
- 
+
 function config($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('tab', {
@@ -13,10 +13,11 @@ function config($stateProvider, $urlRouterProvider) {
       url: '/chats',
       views: {
         'tab-chats': {
-          templateUrl: 'client/templates/chats.ng.html'
+          templateUrl: 'client/templates/chats.ng.html',
+          controller: 'ChatsCtrl'
         }
       }
     });
- 
+
   $urlRouterProvider.otherwise('tab/chats');
 }
